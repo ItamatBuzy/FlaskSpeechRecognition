@@ -44,7 +44,7 @@ def upload():
             return jsonify({'error': 'No file uploaded'})
 
         f = request.files['file']
-        save_path = r'C:\Users\AI\Desktop\server\saves\\' + f.name
+        save_path = f.name
         f.save(save_path)
         speech = SpeechToTextMessege(save_path)
         os.remove(save_path)
